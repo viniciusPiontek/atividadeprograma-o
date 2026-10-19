@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protótipo: Criptografando Letras</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>Protótipo: Criptografando Letras</h1>
+    <p><strong>Conteúdo:</strong> Introdução à Criptografia e Cifra de César.</p>
+  </header>
+
+  <section>
+    <h2>O que é criptografia de letras?</h2>
+
+    <p>
+      A criptografia transforma informações para dificultar sua leitura
+      por pessoas não autorizadas. A Cifra de César é um método antigo
+      de substituição de letras.
+    </p>
+
+    <p>
+      Neste exemplo, cada letra é deslocada três posições no alfabeto:
+      A vira D, B vira E e C vira F. Ao chegar ao final do alfabeto,
+      voltamos ao início: X vira A, Y vira B e Z vira C.
+    </p>
+
+    <p class="nota">
+      Esta cifra é educativa e não oferece segurança adequada para
+      proteger informações reais.
+    </p>
+  </section>
+
+  <div class="interactive-box">
+    <h2>Teste a cifra em tempo real</h2>
+
+    <label for="inputText">Digite uma mensagem:</label>
+
+    <input
+      type="text"
+      id="inputText"
+      placeholder="Exemplo: TEXTO ABC XYZ"
+      autocomplete="off"
+    >
+
+    <button type="button" id="encryptButton">
+      Criptografar mensagem
+    </button>
+
+    <div id="output" class="result" hidden aria-live="polite">
+      Texto criptografado:
+      <span id="outputText"></span>
+    </div>
+  </div>
+
+  <section>
+    <h2>Explicação do código</h2>
+
+    <ul>
+      <li>
+        <code>getElementById()</code> acessa os elementos da página.
+      </li>
+      <li>
+        <code>toUpperCase()</code> transforma o texto em maiúsculas.
+      </li>
+      <li>
+        O laço <code>for</code> percorre cada caractere da mensagem.
+      </li>
+      <li>
+        <code>charCodeAt()</code> obtém o código numérico do caractere.
+      </li>
+      <li>
+        A expressão <code>((codigo - 65 + 3) % 26) + 65</code>
+        desloca as letras três posições, retornando ao início do
+        alfabeto quando necessário.
+      </li>
+      <li>
+        <code>textContent</code> apresenta o resultado na página.
+      </li>
+    </ul>
+  </section>
+</body>
+</html>
